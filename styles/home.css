@@ -15,16 +15,19 @@ header {
   grid-area: left;
   /* top = ao topo / contain = do tamanho do espaço pai */
   background: url("/assets/home-background.svg") no-repeat top/contain;
+  /* Para colocar a imagem no canto da tela cortada */
+  background-position-x: -10rem;
 }
 
 main {
   grid-area: right;
   display: flex;
   align-items: center;
+  margin-top: -12rem;
 }
 
 main .container {
-  width: min(36.3rem 100%);
+  width: min(36.3rem, 100%);
 }
 
 main h2 {
@@ -45,4 +48,53 @@ button,
 .button {
   width: 100%;
   margin-bottom: 1.8rem;
+}
+
+.separator {
+  /* Alinhando uma div ao lado da outra */
+  display: flex;
+  align-items: center;
+  /* 4rem para cima e baixo e 0 para os lados */
+  margin: 4rem 0;
+}
+
+.separator div:nth-child(2) {
+  color: var(--grey-blue);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  /* O para cima e baixo e 1.35 rem para os lados */
+  padding: 0 1.35rem;
+  line-height: 0;
+}
+
+/* nth-child - pegar uma div filha */
+.separator div:nth-child(1),
+.separator div:nth-child(3) {
+  background-color: var(--grey-blue);
+  width: 100%;
+  height: 1px;
+}
+
+/* Criando bolas flutuantes da home */
+.ball {
+  background: var(--blue);
+  /* Formato da bola, para mais formatos https://bennettfeely.com/clippy/*/
+  clip-path: circle();
+  /* fixed = Fica na frente e por cima de tudo */
+  position: fixed;
+  opacity: 0.1;
+}
+
+.top {
+  top: -46rem;
+  width: 63.3rem;
+  right: -35rem;
+  height: 63.3rem;
+}
+
+.bottom {
+  width: 21.2rem;
+  height: 21.2rem;
+  bottom: -15rem;
+  right: 5.6rem;
 }

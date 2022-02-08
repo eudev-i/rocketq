@@ -25,6 +25,7 @@ html {
 }
 
 body {
+  display: flex;
   /* vh - View Height / vw - View Wight / 100 é o total da tela */
   height: 100vh;
   background-color: var(--background);
